@@ -27,5 +27,20 @@ sudo apt-get install python-serial openocd \
     libftdi-dev libtool zlib1g-dev \
     python-empy gcc-arm-embedded -y
 
+# Install GCC 4.9 (5.4 is installed by default, do not work)
+pushd .
+cd ~
+wget https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q3-update/+download/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
+tar -jxf gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2
+exportline="export PATH=$HOME/gcc-arm-none-eabi-4_9-2015q3/bin:\$PATH"
+if grep -Fxq "$exportline" ~/.profile; then echo nothing to do ; else echo $exportline >> ~/.profile; fi
+. ~/.profile
+popd
+
+sudo dpkg --add-architecture i386
+sudo apt-get update
+
+sudo apt-get install libc6:i386 libgcc1:i386 gcc-4.9-base:i386 libstdc++5:i386 libstdc++6:i386
+
 
 ######### FIRST BUILD ################
