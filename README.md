@@ -4,7 +4,8 @@
 ## PREPARATION
 
 
-make a user to be part of "dialout"
+make a user to be part of "dialout"fffd v
+
 ```
 sudo usermod -a -G dialout $USER
 ```
