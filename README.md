@@ -1,13 +1,13 @@
-# px4
-
 # Here is the instructions of how to build the px4 firmware on Ubuntu 16.04.1 LTS operating system
 
 
-######### PREPARATION ##############
+## PREPARATION
 
 
-# make a user to be part of "dialout"
+make a user to be part of "dialout"
+```
 sudo usermod -a -G dialout $USER
+```
 
 # update the package list and install dependencies
 sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
@@ -43,7 +43,7 @@ sudo apt-get update
 sudo apt-get install libc6:i386 libgcc1:i386 gcc-4.9-base:i386 libstdc++5:i386 libstdc++6:i386
 
 
-######### FIRST BUILD ################
+## FIRST BUILD
 
 mkdir -p ~/src
 cd ~/src
